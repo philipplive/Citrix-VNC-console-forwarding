@@ -6,5 +6,6 @@ The node.js script must be hosted on a guest-system on your cluster and they mus
 The only tricky step is the initializing. First you need to send the initial http-header to authorize you, and on the response you must remove the http-header, because VNC-clients can't handle this.
 
 ## References
-[Procedure](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/)
-[API documentation]([Documentation](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/))
+* [Procedure](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/)
+* [API documentation]([Documentation](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/))
+
