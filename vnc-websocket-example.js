@@ -14,8 +14,8 @@ server.on('connection', (serverSocket, req) => {
         rejectUnauthorized: false
     };
 
-    const client = tls.connect(options, () => {
-        client.write(
+    const xenSocket = tls.connect(options, () => {
+        xenSocket.write(
             [
                 'CONNECT /console?uuid=1234b76b-1234-1234-1234-12341e556adb HTTP/1.1',
                 'Host: 123.123.123.123',
@@ -29,7 +29,7 @@ server.on('connection', (serverSocket, req) => {
     let passthrough = false;
     let cache = '';
 
-    client.on('data', (data) => {
+    xenSocket.on('data', (data) => {
         if (passthrough)
             serverSocket.send(data);
         else {
@@ -42,14 +42,14 @@ server.on('connection', (serverSocket, req) => {
         }
     });
 
-    client.on('end', () => {
+    xenSocket.on('end', () => {
     })
 
-    client.on('error', (error) => {
+    xenSocket.on('error', (error) => {
     })
 
     serverSocket.on('message', (data) => {
-        client.write(data);
+        xenSocket.write(data);
     });
 
     serverSocket.on('end', () => {

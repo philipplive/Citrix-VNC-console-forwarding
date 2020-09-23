@@ -10,9 +10,9 @@ const server = net.createServer((serverSocket) => {
         rejectUnauthorized: false
     };
 
-    const client = tls.connect(options, () => {
+    const xenSocket = tls.connect(options, () => {
         // Set http parameters
-        client.write(
+        xenSocket.write(
             [
                 'CONNECT /console?uuid=1234b76b-1234-1234-1234-12341e556adb HTTP/1.1',
                 'Host: 123.123.123.123',
@@ -26,11 +26,10 @@ const server = net.createServer((serverSocket) => {
     let passthrough = false;
     let cache = '';
 
-    client.on('data', (data) => {
+    xenSocket.on('data', (data) => {
         if (passthrough)
             serverSocket.write(data);
         else {
-            // Cut off the http-header from the response
             cache += data.toString();
 
             if (cache.includes('\r\n\r\n')) {
@@ -40,14 +39,14 @@ const server = net.createServer((serverSocket) => {
         }
     });
 
-    client.on('end', () => {
+    xenSocket.on('end', () => {
     })
 
-    client.on('error', (error) => {
+    xenSocket.on('error', (error) => {
     })
 
     serverSocket.on('data', (data) => {
-        client.write(data);
+        xenSocket.write(data);
     });
 
     serverSocket.on('end', () => {
@@ -57,5 +56,4 @@ const server = net.createServer((serverSocket) => {
     })
 });
 
-// Open VNC-Server on port 1234
 server.listen(1234, '127.0.0.1');
