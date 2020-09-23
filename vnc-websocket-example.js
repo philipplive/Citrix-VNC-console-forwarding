@@ -9,7 +9,7 @@ const server = new ws.Server({
 
 server.on('connection', (serverSocket, req) => {
     const options = {
-        host: '185.66.108.5',
+        host: '123.123.123.123',
         port: 443,
         rejectUnauthorized: false
     };
@@ -17,9 +17,9 @@ server.on('connection', (serverSocket, req) => {
     const client = tls.connect(options, () => {
         client.write(
             [
-                'CONNECT /console?uuid=a6d0b76b-a889-56a7-17d8-93931e556adb HTTP/1.1',
-                'Host: 185.66.108.5',
-                'Cookie: session_id=OpaqueRef:c8df316e-3524-48ab-9488-829915e85cee',
+                'CONNECT /console?uuid=1234b76b-1234-1234-1234-12341e556adb HTTP/1.1',
+                'Host: 123.123.123.123',
+                'Cookie: session_id=OpaqueRef:1234316e-1234-1234-1234-123415e85cee',
                 '',
                 '',
             ].join('\r\n')
