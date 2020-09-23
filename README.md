@@ -7,5 +7,5 @@ The only tricky step is the initializing. First you need to send the initial htt
 
 ## References
 * [Procedure](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/)
-* [API documentation]([Documentation](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/))
+* [API documentation](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/)
 
