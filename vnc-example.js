@@ -30,6 +30,7 @@ const server = net.createServer((serverSocket) => {
         if (passthrough)
             serverSocket.write(data);
         else {
+            // Cut off the http-header from the response
             cache += data.toString();
 
             if (cache.includes('\r\n\r\n')) {
