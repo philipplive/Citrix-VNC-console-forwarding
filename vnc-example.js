@@ -57,4 +57,5 @@ const server = net.createServer((serverSocket) => {
     })
 });
 
+// Open VNC-Server on port 1234
 server.listen(1234, '127.0.0.1');
