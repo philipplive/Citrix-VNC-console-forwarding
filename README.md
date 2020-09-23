@@ -5,6 +5,11 @@ The node.js script must be hosted on a guest-system on your cluster and they mus
 
 The only tricky step is the initializing. First you need to send the initial http-header to authorize you, and on the response you must remove the http-header, because VNC-clients can't handle this.
 
+## Usage with noVNC
+With noVNC you can open a VNC-connection directly from all modern browsers. Because noVNC use a WebSocket to connect, we need a service that can handle this. For this you can use node.js [ws](https://www.npmjs.com/package/ws). You see it in the script vnc-websocket-example.js
+
+With WebSockets, it's also easy possible to secure the connection. Use the [https](https://www.npmjs.com/package/https) as an optional paramtere in the WebSocket and a valid Certificate.
+
 ## References
 * [Procedure](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/)
 * [API documentation](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/)
