@@ -25,3 +25,6 @@ With WebSockets, it's also easy possible to secure the connection. Use the [http
 * [Procedure](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/)
 * [API documentation](https://developer-docs.citrix.com/projects/citrix-hypervisor-sdk/en/latest/xs-api-extensions/)
 
+##Notes
+* Check the HTTP-response if it contains a status code 200 
+* To cut of the HTTP-header you can also use (partial-stream)[https://www.npmjs.com/package/partial-stream]
