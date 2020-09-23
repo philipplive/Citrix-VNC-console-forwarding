@@ -27,4 +27,4 @@ With WebSockets, it's also easy possible to secure the connection. Use the [http
 
 ## Notes
 * Check the HTTP-response if it has status code 200
-* To cut of the HTTP-header you can also use (partial-stream)[https://www.npmjs.com/package/partial-stream]
+* To cut of the HTTP-header you can also use [partial-stream](https://www.npmjs.com/package/partial-stream)
